@@ -1,0 +1,12 @@
+// app global css in SCSS form
+body {
+  background: $bg-darkest;
+}
+
+.container {
+  width: 65vw;
+
+  @media ($breakpoint-md) {
+    width: 95vw;
+  }
+}
