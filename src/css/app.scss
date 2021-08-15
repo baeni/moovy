@@ -1,12 +1,53 @@
 // app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap');
+
 body {
-  background: $bg-darkest;
+  font-family: 'Barlow', sans-serif;
+  background: $darkest;
 }
 
 .container {
   width: 65vw;
+  margin: 0 auto;
+}
 
-  @media ($breakpoint-md) {
-    width: 95vw;
-  }
+.text-gradient {
+  background: #E7E7E7;
+  background: -webkit-radial-gradient(ellipse farthest-corner at top center, #E7E7E7 0%, #444444 100%);
+  background: -moz-radial-gradient(ellipse farthest-corner at top center, #E7E7E7 0%, #444444 100%);
+  background: radial-gradient(ellipse farthest-corner at top center, #E7E7E7 0%, #444444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-darkest {
+  color: $darkest;
+}
+
+.text-dark {
+  color: $dark;
+}
+
+.text-light {
+  color: $light;
+}
+
+.text-h1, .text-h2, .text-h3 {
+  font-weight: bold;
+
+}
+
+.text-h1 {
+  font-size: 52px;
+  line-height: 52px * 1.5;
+}
+
+.text-h2 {
+  font-size: 22px;
+  line-height: 22px * 1.5;
+}
+
+.text-h3 {
+  font-size: 20px;
+  line-height: 20px * 1.5;
 }
