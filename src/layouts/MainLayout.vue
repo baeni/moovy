@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <!-- TODO: Navbar -->
+    <navbar />
 
     <q-page-container>
       <router-view />
@@ -11,7 +11,12 @@
 </template>
 
 <script>
+import Navbar from "components/general/Navbar";
+
 export default {
-  name: 'MainLayout'
+  name: 'MainLayout',
+  components: {
+    Navbar
+  }
 }
 </script>
