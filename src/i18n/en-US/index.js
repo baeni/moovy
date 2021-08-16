@@ -1,16 +1,16 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   general: {
-    formSearch: 'Search for any movie'
+    formSearch: 'Search for any movie',
+    formSearchHint: 'moovy is based on the TMDb and fetches any and all information from their API'
   },
   indexPage: {
-    home: {
-      name: 'Home',
-      heading: 'Learn everything about your favourite moovy',
-      subHeading: 'Pronounced as /mu:vɪ/ or movie'
-    }
+    name: 'Home',
+    heading: 'Find the movie with moovy',
+    subHeading: 'Pronounced as /mu:vɪ/ or movie',
+    nowPlayingMovies: 'Now in Cinema',
+    trendyMoviesDay: 'Trendy Today',
+    trendyMoviesWeek: 'Trendy this Week',
+    popularActors: 'Popular Actors'
   },
   moviePage: {}
 }
