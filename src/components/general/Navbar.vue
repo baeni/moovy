@@ -1,18 +1,11 @@
 <template>
-  <q-header>
+  <q-header class="flex">
     <q-toolbar class="container">
-      <q-btn class="text-h3" label="moovy" flat @click="$router.push('/')" />
+      <q-btn class="text-h3" label="moovy" flat @click="$router.push('/')" no-caps />
 
       <q-space />
 
-      <q-btn
-        class="text-bold"
-        :label="$t('indexPage.home.name')"
-        flat
-        @click="$router.push('/')"
-      />
-
-      <search-form class="q-pl-md" />
+      <search-form dense />
     </q-toolbar>
   </q-header>
 </template>
@@ -30,7 +23,8 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background: transparentize($dark, .65);
+  height: 75px;
+  background: transparentize($light, .9);
   backdrop-filter: blur(15px);
 }
 </style>
