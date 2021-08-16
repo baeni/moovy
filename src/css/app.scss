@@ -13,6 +13,10 @@ section {
 .container {
   width: 70vw;
   margin: 0 auto;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 95vw;
+  }
 }
 
 .bg-darkest {
@@ -42,7 +46,6 @@ section {
 
 .text-h1, .text-h2, .text-h3, .text-h4 {
   font-weight: bold;
-
 }
 
 .text-h1 {
