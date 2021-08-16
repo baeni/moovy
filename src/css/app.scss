@@ -6,9 +6,21 @@ body {
   background: $darkest;
 }
 
+section {
+  padding: 50px 0;
+}
+
 .container {
-  width: 65vw;
+  width: 70vw;
   margin: 0 auto;
+}
+
+.bg-darkest {
+  background: $darkest;
+}
+
+.bg-light {
+  background: $light;
 }
 
 .text-gradient {
@@ -24,15 +36,11 @@ body {
   color: $darkest;
 }
 
-.text-dark {
-  color: $dark;
-}
-
 .text-light {
   color: $light;
 }
 
-.text-h1, .text-h2, .text-h3 {
+.text-h1, .text-h2, .text-h3, .text-h4 {
   font-weight: bold;
 
 }
@@ -50,4 +58,9 @@ body {
 .text-h3 {
   font-size: 20px;
   line-height: 20px * 1.5;
+}
+
+.text-h4 {
+  font-size: 16px;
+  line-height: 16px * 1.5;
 }
