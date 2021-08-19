@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Navbar from "components/general/Navbar";
+import Navbar from "components/Navbar";
 
 export default {
   name: 'MainLayout',
