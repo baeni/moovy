@@ -13,9 +13,3 @@ export function getTrendyMoviesWeek(state) {
 export function getPopularActors(state) {
   return state.popularActors;
 }
-
-
-
-export function getDisplayedMovies(state) {
-  return state.displayedMovies;
-}
