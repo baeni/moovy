@@ -13,9 +13,3 @@ export function setTrendyMoviesWeek(state, movies) {
 export function setPopularActors(state, actors) {
   state.popularActors = actors;
 }
-
-
-
-export function setDisplayedMovies(state, movies) {
-  state.displayedMovies = movies;
-}
