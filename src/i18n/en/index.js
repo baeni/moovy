@@ -8,9 +8,15 @@ export default {
     heading: 'Find the movie with moovy',
     subHeading: 'Pronounced as /mu:vɪ/ or movie',
     nowPlayingMovies: 'Now in Cinema',
-    trendyMoviesDay: 'Trendy Today',
-    trendyMoviesWeek: 'Trendy this Week',
+    trendyMoviesDay: 'Trending Today',
+    trendyMoviesWeek: 'Trending this Week',
     popularActors: 'Popular Actors'
   },
-  moviePage: {}
+  searchPage: {
+    results: 'Results for "{searchQuery}"'
+  },
+  detailsPage: {
+    homepage: 'Official Site',
+    trailers: 'Trailers, Teasers & more'
+  }
 }
