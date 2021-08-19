@@ -1,5 +1,5 @@
 <template>
-  <q-form class="row" @submit="searchMovies(searchQuery)">
+  <q-form class="row" @submit="this.$router.push('/search/movie/'+searchQuery);">
     <q-input
       class="full-width"
       v-model="searchQuery"
@@ -34,11 +34,6 @@ export default {
   data() {
     return {
       searchQuery: ""
-    }
-  },
-  methods: {
-    searchMovies(searchQuery) {
-      this.$store.dispatch('SearchModule/searchMovies', searchQuery);
     }
   }
 }
