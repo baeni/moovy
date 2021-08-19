@@ -1,10 +1,9 @@
 <template>
-  <router-view />
+  <router-view :key="$route.fullPath" />
 </template>
-<script>
-import { defineComponent } from 'vue';
 
-export default defineComponent({
+<script>
+export default {
   name: 'App'
-})
+}
 </script>
