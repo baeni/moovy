@@ -12,7 +12,12 @@
 
     <section>
       <div class="container">
-        <movie-showcase :title="$t('indexPage.nowPlayingMovies')" :movies="$store.getters['SearchModule/getNowPlayingMovies']" />
+        <movie-showcase
+          :title="$t('indexPage.nowPlayingMovies')"
+          :movies="$store.getters['SearchModule/getNowPlayingMovies']"
+          discover-query="now-playing"
+          dense
+        />
       </div>
     </section>
 
@@ -20,7 +25,12 @@
 
     <section>
       <div class="container">
-        <movie-showcase :title="$t('indexPage.trendyMoviesDay')" :movies="$store.getters['SearchModule/getTrendyMoviesDay']" />
+        <movie-showcase
+          :title="$t('indexPage.trendingMoviesDay')"
+          :movies="$store.getters['SearchModule/getTrendingMoviesDay']"
+          discover-query="trending-day"
+          dense
+        />
       </div>
     </section>
 
@@ -28,7 +38,12 @@
 
     <section>
       <div class="container">
-        <movie-showcase :title="$t('indexPage.trendyMoviesWeek')" :movies="$store.getters['SearchModule/getTrendyMoviesWeek']" />
+        <movie-showcase
+          :title="$t('indexPage.trendingMoviesWeek')"
+          :movies="$store.getters['SearchModule/getTrendingMoviesWeek']"
+          discover-query="trending-week"
+          dense
+        />
       </div>
     </section>
 
@@ -36,7 +51,10 @@
 
     <section>
       <div class="container">
-        <actor-list :title="$t('indexPage.popularActors')" :actors="$store.getters['SearchModule/getPopularActors']" />
+        <actor-list
+          :title="$t('indexPage.popularActors')"
+          :actors="$store.getters['SearchModule/getPopularActors']"
+        />
       </div>
     </section>
   </q-page>
@@ -56,8 +74,8 @@ export default {
   },
   created() {
     this.$store.dispatch('SearchModule/fetchNowPlayingMovies');
-    this.$store.dispatch('SearchModule/fetchTrendyMovies', "Day");
-    this.$store.dispatch('SearchModule/fetchTrendyMovies', "Week");
+    this.$store.dispatch('SearchModule/fetchTrendingMovies', "Day");
+    this.$store.dispatch('SearchModule/fetchTrendingMovies', "Week");
     this.$store.dispatch('SearchModule/fetchPopularActors');
   }
 }
