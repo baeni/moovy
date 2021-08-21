@@ -2,12 +2,12 @@ export function getNowPlayingMovies(state) {
   return state.nowPlayingMovies;
 }
 
-export function getTrendyMoviesDay(state) {
-  return state.trendyMoviesDay
+export function getTrendingMoviesDay(state) {
+  return state.trendingMoviesDay
 }
 
-export function getTrendyMoviesWeek(state) {
-  return state.trendyMoviesWeek;
+export function getTrendingMoviesWeek(state) {
+  return state.trendingMoviesWeek;
 }
 
 export function getPopularActors(state) {

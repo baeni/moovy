@@ -2,12 +2,12 @@ export function setNowPlayingMovies(state, movies) {
   state.nowPlayingMovies = movies;
 }
 
-export function setTrendyMoviesDay(state, movies) {
-  state.trendyMoviesDay = movies;
+export function setTrendingMoviesDay(state, movies) {
+  state.trendingMoviesDay = movies;
 }
 
-export function setTrendyMoviesWeek(state, movies) {
-  state.trendyMoviesWeek = movies;
+export function setTrendingMoviesWeek(state, movies) {
+  state.trendingMoviesWeek = movies;
 }
 
 export function setPopularActors(state, actors) {
