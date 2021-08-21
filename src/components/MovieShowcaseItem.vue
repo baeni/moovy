@@ -1,5 +1,5 @@
 <template>
-  <div class="col">
+  <div class="col-3">
     <q-card
       class="full-height"
       bordered
@@ -9,7 +9,6 @@
         <q-img
           class="cursor-pointer"
           :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
-          width="250px"
           @click="$router.push('/details/movie/'+movie.id)"
         />
       </div>
