@@ -1,8 +1,8 @@
 export default function () {
   return {
     nowPlayingMovies: [],
-    trendyMoviesDay: [],
-    trendyMoviesWeek: [],
+    trendingMoviesDay: [],
+    trendingMoviesWeek: [],
     popularActors: []
   }
 }
