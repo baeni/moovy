@@ -1,28 +1,32 @@
 <template>
-  <div class="text-h2 text-lightest q-pb-md">{{ title }}</div>
+  <div class="text-h2 text-lightest q-pb-md">
+    {{ title }}
+    <q-btn
+      class="text-bold text-accent float-right q-px-md"
+      :label="$t('indexPage.more')"
+      icon-right="navigate_next"
+      dense
+      rounded
+      flat
+      @click="$router.push('/discover/movie/'+discoverQuery)"
+    />
+  </div>
   <div class="row q-col-gutter-md">
     <movie-showcase-item
-      v-for="(movie, i) in !dense ? movies : movies.slice(0, 7)"
-      :key="i"
+      v-for="movie in movies.slice(0, 4)"
+      :key="movie.id"
       :movie="movie"
-    />
-    <movie-showcase-summary-item
-      v-if="dense"
-      :movies="movies.slice(7, 16)"
-      :discover-query="discoverQuery"
     />
   </div>
 </template>
 
 <script>
 import MovieShowcaseItem from "components/MovieShowcaseItem";
-import MovieShowcaseSummaryItem from "components/MovieShowcaseSummaryItem";
 
 export default {
   name: 'MovieShowcase',
   components: {
-    MovieShowcaseItem,
-    MovieShowcaseSummaryItem
+    MovieShowcaseItem
   },
   props: {
     title: {
@@ -36,10 +40,6 @@ export default {
     discoverQuery: {
       type: String,
       required: true
-    },
-    dense: {
-      type: Boolean,
-      default: false
     }
   }
 }
