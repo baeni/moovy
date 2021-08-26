@@ -11,7 +11,7 @@ export default {
     trendingMoviesDay: 'Heute angesagt',
     trendingMoviesWeek: 'Diese Woche angesagt',
     popularActors: 'Beliebte Schauspieler',
-    showcaseSummary: 'Mehr zeigen'
+    more: 'Mehr anzeigen'
   },
   searchPage: {
     results: 'Ergebnisse für "{searchQuery}"'

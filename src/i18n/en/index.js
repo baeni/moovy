@@ -11,7 +11,7 @@ export default {
     trendingMoviesDay: 'Trending Today',
     trendingMoviesWeek: 'Trending this Week',
     popularActors: 'Popular Actors',
-    showcaseSummary: 'Show more'
+    more: 'Show more'
   },
   searchPage: {
     results: 'Results for "{searchQuery}"'
