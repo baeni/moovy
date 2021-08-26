@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useI18n } from 'vue-i18n';
 
-const TMDB_API_KEY = process.env.QUASAR_APP_TMDB_API_KEY;
+const TMDB_API_KEY = process.env.VUE_APP_TMDB_API_KEY;
 
 export function fetchNowPlayingMovies(context) {
   return axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_API_KEY}&language=${useI18n().locale}`)
