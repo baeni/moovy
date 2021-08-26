@@ -14,23 +14,36 @@
         dark
       />
 
-      <q-select
-        v-model="locale"
-        :options="localeOptions"
-        :model-value="locale"
-        transition-show="jump-down"
-        transition-hide="jump-up"
-        menu-self="center right"
-        standout
+      <q-btn
+        class="text-bold"
+        :label="locale"
         flat
-        dense
-        options-dense
-        options-cover
-        hide-dropdown-icon
-        emit-value
-        map-options
-        dark
-      />
+      >
+        <q-menu
+          :offset="[0, 10]"
+          transition-show="scale"
+          transition-hide="scale"
+          dark
+        >
+          <q-list>
+            <q-item
+              v-for="(localeOption, i) in localeOptions"
+              :key="i"
+              clickable
+              dense
+              v-close-popup
+              @click="locale = localeOption"
+            >
+              <q-item-section
+                class="text-uppercase"
+                v-bind:class="{'text-bold text-underline':locale === localeOption}"
+              >
+                {{ localeOption }}
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
     </q-toolbar>
   </q-header>
 </template>
@@ -51,8 +64,8 @@ export default {
     return {
       locale,
       localeOptions: [
-        { value: 'en', label: 'EN' },
-        { value: 'de', label: 'DE' }
+        "en",
+        "de"
       ]
     }
   }
@@ -61,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 75px;
+  min-height: 75px;
   background: transparentize($light, .9);
   backdrop-filter: blur(15px);
 }
