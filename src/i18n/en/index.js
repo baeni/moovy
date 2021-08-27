@@ -7,17 +7,19 @@ export default {
     name: 'Home',
     heading: 'Find the movie with moovy',
     subHeading: 'Pronounced as /mu:vɪ/ or movie',
-    nowPlayingMovies: 'Now in Cinema',
-    trendingMoviesDay: 'Trending Today',
-    trendingMoviesWeek: 'Trending this Week',
-    popularActors: 'Popular Actors',
+    popularMovies: 'Popular Movies',
+    upcomingMovies: 'Upcoming Movies',
     more: 'Show more'
   },
   searchPage: {
-    results: 'Results for "{searchQuery}"'
+    results: 'Results for "{query}"'
   },
   detailsPage: {
     homepage: 'Official Site',
     trailers: 'Trailers, Teasers & more'
+  },
+  error404Page: {
+    heading: '404 — Wrong direction',
+    description: 'Let\'s find a better place for you to go.'
   }
 }
