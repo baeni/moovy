@@ -1,9 +1,9 @@
 <template>
-  <q-form class="row" @submit="this.$router.push('/search/movie/'+searchQuery);">
+  <q-form class="row" @submit="this.$router.push('/search/'+query);">
     <q-input
       class="full-width"
-      v-model="searchQuery"
-      :model-value="searchQuery"
+      v-model="query"
+      :model-value="query"
       :placeholder="$t('general.formSearch')"
       :bottom-slots="!dense"
       clear-icon="close"
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      searchQuery: ""
+      query: ""
     }
   }
 }
