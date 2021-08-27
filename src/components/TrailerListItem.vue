@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6">
+  <div class="col-6" v-bind:class="{ 'col-12': $q.platform.is.mobile }">
     <q-card
       class="full-height"
       bordered
