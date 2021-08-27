@@ -5,10 +5,8 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
 
-      { path: 'discover/movie/:discoverQuery', component: () => import('pages/SearchPage.vue') },
-
-      { path: 'search/movie/:searchQuery', component: () => import('pages/SearchPage.vue') },
-      { path: 'details/movie/:id', component: () => import('pages/DetailsPage.vue') },
+      { path: 'search/:query', component: () => import('pages/SearchPage.vue'), props: route => ({ query: route.params.query }) },
+      { path: 'details/:id', component: () => import('pages/DetailsPage.vue'), props: route => ({ id: route.params.id }) },
 
       { path: ':catchAll(.*)*', component: () => import('pages/Error404Page.vue') }
     ]
