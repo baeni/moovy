@@ -3,7 +3,16 @@
     <section class="relative-position">
       <q-img id="background" class="absolute-full shadow-5" :src="'https://image.tmdb.org/t/p/w1280'+movie.backdrop_path" />
       <div class="container row q-col-gutter-x-lg">
-        <q-img class="col-3 rounded-borders" :src="'https://www.themoviedb.org/t/p/w500/'+movie.poster_path" fit="fill" />
+        <q-img
+          class="col-3 rounded-borders"
+          :src="'https://www.themoviedb.org/t/p/w500/'+movie.poster_path"
+          :ratio="2/3"
+          no-native-menu
+        >
+          <template v-slot:error>
+            <div class="text-h4 text-center absolute-full flex flex-center">No image available</div>
+          </template>
+        </q-img>
 
         <div class="col-9 q-my-auto">
           <div class="text-h2 text-white">{{ movie.title }}</div>
@@ -16,7 +25,7 @@
       </div>
     </section>
 
-    <section>
+    <section v-if="trailers.length">
       <div class="container">
         <trailer-list :trailers="trailers" />
       </div>
@@ -32,21 +41,26 @@ export default {
   components: {
     TrailerList
   },
+  props: {
+    id: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
       dataReady: false,
       movie: {},
-      trailers: {}
+      trailers: []
     }
   },
-  async mounted() {
-    await this.$store.dispatch('SearchModule/getMovieDetails', this.$route.params.id)
-      .then(response => {
-        this.movie = response;
+  created() {
+    this.$store.dispatch('SearchModule/getMovieDetails', this.id)
+      .then(res => {
+        this.movie = res;
         this.trailers = this.movie.videos.results.filter(el => el.site === 'YouTube');
         this.dataReady = true;
-      })
-      .catch(err => Promise.reject(err));
+      }).catch(err => Promise.reject(err));
   }
 }
 </script>
