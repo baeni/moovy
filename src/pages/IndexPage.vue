@@ -1,5 +1,6 @@
 <template>
   <q-page>
+    <!-- landing -->
     <section>
       <div class="container">
         <div class="text-h1 text-center text-gradient">{{ $t('indexPage.heading') }}</div>
@@ -10,50 +11,26 @@
 
     <q-separator dark inset />
 
+    <!-- popular movies -->
     <section>
       <div class="container">
-        <movie-showcase
-          :title="$t('indexPage.nowPlayingMovies')"
-          :movies="$store.getters['SearchModule/getNowPlayingMovies']"
-          discover-query="now-playing"
-          dense
+        <movie-list
+          :title="$t('indexPage.popularMovies')"
+          :movies="$store.getters['SearchModule/getPopularMovies']"
+          scroller
         />
       </div>
     </section>
 
     <q-separator dark inset />
 
+    <!-- upcoming movies -->
     <section>
       <div class="container">
-        <movie-showcase
-          :title="$t('indexPage.trendingMoviesDay')"
-          :movies="$store.getters['SearchModule/getTrendingMoviesDay']"
-          discover-query="trending-day"
-          dense
-        />
-      </div>
-    </section>
-
-    <q-separator dark inset />
-
-    <section>
-      <div class="container">
-        <movie-showcase
-          :title="$t('indexPage.trendingMoviesWeek')"
-          :movies="$store.getters['SearchModule/getTrendingMoviesWeek']"
-          discover-query="trending-week"
-          dense
-        />
-      </div>
-    </section>
-
-    <q-separator dark inset />
-
-    <section>
-      <div class="container">
-        <actor-list
-          :title="$t('indexPage.popularActors')"
-          :actors="$store.getters['SearchModule/getPopularActors']"
+        <movie-list
+          :title="$t('indexPage.upcomingMovies')"
+          :movies="$store.getters['SearchModule/getUpcomingMovies']"
+          scroller
         />
       </div>
     </section>
@@ -61,22 +38,14 @@
 </template>
 
 <script>
-import SearchForm from "components/SearchForm";
-import MovieShowcase from "components/MovieShowcase";
-import ActorList from "components/ActorList";
+import SearchForm from 'components/SearchForm';
+import MovieList from 'components/MovieList';
 
 export default {
   name: 'IndexPage',
   components: {
     SearchForm,
-    MovieShowcase,
-    ActorList
-  },
-  created() {
-    this.$store.dispatch('SearchModule/fetchNowPlayingMovies');
-    this.$store.dispatch('SearchModule/fetchTrendingMovies', "Day");
-    this.$store.dispatch('SearchModule/fetchTrendingMovies', "Week");
-    this.$store.dispatch('SearchModule/fetchPopularActors');
+    MovieList
   }
 }
 </script>
