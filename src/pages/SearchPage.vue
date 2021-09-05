@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import MovieList from 'components/MovieList';
+import MovieList from 'components/movie/MovieList';
 
 export default {
   name: 'SearchPage',

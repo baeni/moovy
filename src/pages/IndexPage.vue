@@ -39,7 +39,7 @@
 
 <script>
 import SearchForm from 'components/SearchForm';
-import MovieList from 'components/MovieList';
+import MovieList from 'components/movie/MovieList';
 
 export default {
   name: 'IndexPage',
