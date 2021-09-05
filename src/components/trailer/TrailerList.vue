@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TrailerListItem from "components/TrailerListItem";
+import TrailerListItem from "components/trailer/TrailerListItem";
 
 export default {
   name: 'TrailerList',
