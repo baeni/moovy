@@ -20,30 +20,47 @@
 
           <div class="text-body1 text-white q-py-md">{{ movie.overview }}</div>
 
-          <q-btn class="text-subtitle1 text-white bg-accent" :label="$t('detailsPage.homepage')" :href="movie.homepage" type="a" target="_blank" dark flat no-caps />
+          <div class="column">
+            <q-btn
+              class="col text-bold text-white bg-accent"
+              label="Add to list"
+              icon="add"
+              dark
+              flat
+              no-caps
+              @click="$store.dispatch('StoreModule/addToUsersList')"
+            />
+            <q-btn
+              class="col text-bold text-lightest bg-light"
+              :label="$t('detailsPage.homepage')"
+              :href="movie.homepage"
+              type="a"
+              target="_blank"
+              dark
+              flat
+              no-caps
+            />
+          </div>
         </div>
       </div>
     </section>
 
+    <!--
     <section v-if="trailers.length">
       <div class="container">
         <trailer-list :trailers="trailers" />
       </div>
     </section>
+    -->
   </q-page>
 </template>
 
 <script>
-import TrailerList from "components/TrailerList";
-
 export default {
   name: 'DetailsPage',
-  components: {
-    TrailerList
-  },
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true
     }
   },
