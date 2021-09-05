@@ -1,5 +1,5 @@
 <template>
-  <q-form class="row" @submit="this.$router.push('/search/'+query);">
+  <q-form @submit="this.$router.push('/search/'+query);">
     <q-input
       class="full-width"
       v-model="query"
