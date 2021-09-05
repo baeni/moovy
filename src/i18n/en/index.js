@@ -1,7 +1,13 @@
 export default {
   general: {
     formSearch: 'Search for any movie',
-    formSearchHint: 'moovy is based on the TMDb and fetches any and all information from their API'
+    formSearchHint: 'moovy is based on the TMDb and fetches any and all information from their API',
+
+    profileMenu: 'Signed in as {username}',
+    profileMenuAccount: 'Your Account',
+    profileMenuList: 'Your List',
+    profileMenuLanguage: 'Language',
+    profileMenuSignOut: 'Sign out'
   },
   indexPage: {
     name: 'Home',
@@ -17,6 +23,15 @@ export default {
   detailsPage: {
     homepage: 'Official Site',
     trailers: 'Trailers, Teasers & more'
+  },
+  authPage: {
+    name: 'Sign In',
+    heading: 'Sign in with',
+    formEmail: 'Enter your email',
+    formPassword: 'Enter your password',
+    formPasswordConfirm: 'Confirm your password',
+    formSignIn: 'Sign In',
+    formSignUp: 'Create New Account'
   },
   error404Page: {
     heading: '404 — Wrong direction',
