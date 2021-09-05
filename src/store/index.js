@@ -1,7 +1,9 @@
 import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
 
+import AuthModule from './auth_module'
 import SearchModule from './search_module'
+import DbModule from './db_module'
 
 /*
  * If not building with SSR mode, you can
@@ -15,7 +17,9 @@ import SearchModule from './search_module'
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
-      SearchModule
+      AuthModule,
+      SearchModule,
+      DbModule
     },
 
     // enable strict mode (adds overhead!)
