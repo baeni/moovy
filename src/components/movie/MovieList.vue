@@ -1,5 +1,5 @@
 <template>
-  <div class="text-h2 text-light q-pb-md">{{ title }}</div>
+  <div class="text-h3 text-uppercase text-light q-pb-md">{{ title }}</div>
   <div class="row q-col-gutter-md" v-bind:class="{ 'no-wrap overflow-auto q-pb-md': scroller }">
     <movie-list-item
       v-for="movie in movies"
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MovieListItem from "components/MovieListItem";
+import MovieListItem from "components/movie/MovieListItem";
 
 export default {
   name: 'MovieList',
