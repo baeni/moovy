@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ActorListItem from "components/ActorListItem";
+import ActorListItem from "components/actor/ActorListItem";
 
 export default {
   name: 'ActorList',
