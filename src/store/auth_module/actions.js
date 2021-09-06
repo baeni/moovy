@@ -7,7 +7,7 @@ export function signUpUser(context, credentials) {
   createUserWithEmailAndPassword(getAuth(), email, password)
     .then(() => {
       context.commit('setUser');
-      this.$router.push('/');
+      this.$router.back();
     }).catch(err => Promise.reject(err));
 }
 
@@ -18,7 +18,7 @@ export function signInUser(context, credentials) {
   signInWithEmailAndPassword(getAuth(), email, password)
     .then(() => {
       context.commit('setUser');
-      this.$router.push('/');
+      this.$router.back();
     }).catch(err => Promise.reject(err));
 }
 
@@ -28,7 +28,7 @@ export function googleSignInUser(context) {
   signInWithPopup(getAuth(), provider)
     .then(() => {
       context.commit('setUser');
-      this.$router.push('/');
+      this.$router.back();
     }).catch(err => Promise.reject(err));
 }
 
