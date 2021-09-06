@@ -4,8 +4,8 @@ export default {
     formSearchHint: 'moovy is based on the TMDb and fetches any and all information from their API',
 
     profileMenu: 'Signed in as {username}',
-    profileMenuAccount: 'Your Account',
-    profileMenuList: 'Your List',
+    profileMenuAccount: 'My Account',
+    profileMenuList: 'My List',
     profileMenuLanguage: 'Language',
     profileMenuSignOut: 'Sign out'
   },
@@ -32,6 +32,9 @@ export default {
     formPasswordConfirm: 'Confirm your password',
     formSignIn: 'Sign In',
     formSignUp: 'Create New Account'
+  },
+  myListPage: {
+    name: 'My List'
   },
   error404Page: {
     heading: '404 — Wrong direction',
