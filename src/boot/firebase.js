@@ -11,10 +11,4 @@ const firebaseConfig = {
   appId: "1:156772489604:web:8966db289473210c6be5d1"
 };
 
-const firebase = initializeApp(firebaseConfig);
-
-/*
-export default async ({ app }) => {
-  app.prototype.$firebase = firebase;
-};
-*/
+initializeApp(firebaseConfig);
