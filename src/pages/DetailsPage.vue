@@ -28,7 +28,7 @@
               dark
               flat
               no-caps
-              @click="$store.dispatch('StoreModule/addToUsersList')"
+              @click="$store.dispatch('DbModule/addToUsersList', movie)"
             />
             <q-btn
               class="col text-bold text-lightest bg-light"
