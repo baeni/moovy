@@ -14,8 +14,7 @@
           <q-item-section>{{ $t('general.profileMenuAccount') }}</q-item-section>
         </q-item>
 
-        <!--<q-item v-close-popup clickable @click="$router.push('/your-list')">-->
-        <q-item title="Currently being developed" disabled>
+        <q-item v-close-popup clickable @click="$router.push('/my-list')">
           <q-item-section>{{ $t('general.profileMenuList') }}</q-item-section>
         </q-item>
 
