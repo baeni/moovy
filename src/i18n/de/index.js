@@ -2,8 +2,10 @@ export default {
   general: {
     formSearch: 'Suche nach einem Film',
     formSearchHint: 'moovy basiert auf der TMDb und bezieht alle Informationen von dessen API',
+
     profileMenu: 'Angemeldet als {username}',
-    profileMenuList: 'Deine Liste',
+    profileMenuAccount: 'Mein Account',
+    profileMenuList: 'Meine Liste',
     profileMenuLanguage: 'Sprache',
     profileMenuSignOut: 'Abmelden'
   },
@@ -31,6 +33,9 @@ export default {
     formConfirmPassword: 'Passwort bestätigen',
     formSignIn: 'Anmelden',
     formSignUp: 'Neuen Account erstellen'
+  },
+  myListPage: {
+    name: 'Meine Liste'
   },
   error404Page: {
     heading: '404 — Falsche Richtung',
