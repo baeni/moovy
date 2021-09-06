@@ -1,20 +1,31 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
-// TODO: set current auth-user's email, ...
-export async function addToUsersList(context) {
-  const doc = doc(this.$firebase.firestore(), 'users', 'baeni.saa@gmail.com');
+export async function addToUsersList(context, movie) {
+  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
+  const docSnap = await getDoc(docRef);
 
-  await setDoc(doc, { list: [5, 6] }, { capital: true }, { merge: true });
+  if (!docSnap.exists()) {
+    await setDoc(docRef, {
+      myList: arrayUnion(movie)
+    });
+  } else {
+    await updateDoc(docRef, {
+      myList: arrayUnion(movie)
+    });
+  }
 }
 
-// TODO: set current auth-user's email, ...
-export async function fetchUserList(context) {
-  const doc = doc(this.$firebase.firestore(), "users", "baeni.saa@gmail.com");
-  const docSnap = await getDoc(doc);
+export async function removeFromUsersList(context, movie) {
+  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
 
-  if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
-  } else {
-    console.log('No such document!');
-  }
+  await updateDoc(docRef, {
+    myList: arrayRemove(movie)
+  });
+}
+
+export async function getUsersList(context) {
+  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
+  const docSnap = await getDoc(docRef);
+
+  return await docSnap.data().myList;
 }
