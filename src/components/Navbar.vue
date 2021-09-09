@@ -1,7 +1,7 @@
 <template>
   <q-header class="flex">
     <q-toolbar class="container">
-      <q-btn class="text-h3" label="moovy" flat no-caps @click="$router.push('/')" />
+      <q-btn class="text-h3" label="moovy" flat stretch no-caps @click="$router.push('/')" />
 
       <q-space />
 
@@ -10,7 +10,7 @@
       <q-separator class="q-mx-md" vertical inset dark />
 
       <user-profile v-if="user" :user="user" />
-      <q-btn v-else class="text-bold" :label="$t('authPage.name')" flat @click="$router.push('/auth')" />
+      <q-btn v-else class="text-bold" :label="$t('authPage.name')" flat rounded @click="$router.push('/auth')" />
     </q-toolbar>
   </q-header>
 </template>
