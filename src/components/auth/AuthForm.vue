@@ -48,8 +48,8 @@
           standout
         />
 
-        <q-btn v-if="newUser" class="text-bold bg-accent" type="submit" :label="$t('authPage.formSignUp')" flat />
-        <q-btn v-else class="text-bold bg-accent" type="submit" :label="$t('authPage.formSignIn')" flat />
+        <q-btn v-if="newUser" class="text-bold bg-accent" type="submit" :label="$t('authPage.formSignUp')" flat rounded />
+        <q-btn v-else class="text-bold bg-accent" type="submit" :label="$t('authPage.formSignIn')" flat rounded />
 
         <div v-if="newUser" class="text-caption cursor-pointer" @click="newUser = !newUser">Already a member? Sign In</div>
         <div v-else class="text-caption cursor-pointer" @click="newUser = !newUser">Not a member yet? Sign Up</div>
