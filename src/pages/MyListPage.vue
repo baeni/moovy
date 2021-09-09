@@ -1,10 +1,10 @@
 <template>
-  <q-page v-if="dataReady">
+  <q-page>
     <section>
       <div class="container">
         <movie-list
           :title="$t('myListPage.name')"
-          :movies="movies"
+          :movies="usersMyList"
         />
       </div>
     </section>
@@ -13,6 +13,8 @@
 
 <script>
 import MovieList from 'components/movie/MovieList';
+import { onSnapshot, doc } from "firebase/firestore";
+import db from 'src/boot/firebase';
 
 export default {
   name: 'MyListPage',
@@ -21,16 +23,13 @@ export default {
   },
   data() {
     return {
-      dataReady: false,
-      movies: []
+      usersMyList: []
     }
   },
   created() {
-    this.$store.dispatch('DbModule/getUsersList')
-      .then(res => {
-        this.movies = res;
-        this.dataReady = true;
-      }).catch(err => Promise.reject(err));
+    onSnapshot(doc(db, 'users', this.$store.getters["AuthModule/getUser"].email), doc => {
+      this.usersMyList = doc.data().myList;
+    });
   }
 }
 </script>
