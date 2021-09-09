@@ -9,6 +9,9 @@ export default {
     profileMenuLanguage: 'Language',
     profileMenuSignOut: 'Sign out'
   },
+  error: {
+    signInNecessary: 'You need to be signed!'
+  },
   indexPage: {
     name: 'Home',
     heading: 'Find the movie with moovy',
@@ -22,7 +25,9 @@ export default {
   },
   detailsPage: {
     homepage: 'Official Site',
-    trailers: 'Trailers, Teasers & more'
+    trailers: 'Trailers, Teasers & more',
+    addedToUsersList: '{title} has been added to your list.',
+    removedFromUsersList: '{title} has been removed from your list.'
   },
   authPage: {
     name: 'Sign In',
