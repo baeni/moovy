@@ -36,5 +36,6 @@ export function signOutUser(context) {
   signOut(getAuth())
     .then(() => {
       context.commit('setUser');
+      this.$router.push('/');
     }).catch(err => Promise.reject(err));
 }
