@@ -22,7 +22,9 @@ export default {
   },
   detailsPage: {
     homepage: 'Offizielle Seite',
-    trailers: 'Trailer, Teaser & mehr'
+    trailers: 'Trailer, Teaser & mehr',
+    addedToUsersList: '{title} wurde zu deiner Liste hinzugefügt.',
+    removedFromUsersList: '{title} wurde von deiner Liste entfernt.'
   },
   authPage: {
     name: 'Anmelden',
