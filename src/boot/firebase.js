@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const FIREBASE_API_KEY = process.env.VUE_APP_FIREBASE_API_KEY;
 
@@ -12,3 +13,7 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+const db = getFirestore();
+
+export default db;
