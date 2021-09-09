@@ -1,7 +1,8 @@
-import { getFirestore, doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import db from 'src/boot/firebase';
 
-export async function addToUsersList(context, movie) {
-  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
+export async function addToUsersMyList(context, movie) {
+  const docRef = doc(db, 'users', context.rootGetters["AuthModule/getUser"].email);
   const docSnap = await getDoc(docRef);
 
   if (!docSnap.exists()) {
@@ -15,17 +16,10 @@ export async function addToUsersList(context, movie) {
   }
 }
 
-export async function removeFromUsersList(context, movie) {
-  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
+export async function removeFromUsersMyList(context, movie) {
+  const docRef = doc(db, 'users', context.rootGetters["AuthModule/getUser"].email);
 
   await updateDoc(docRef, {
     myList: arrayRemove(movie)
   });
-}
-
-export async function getUsersList(context) {
-  const docRef = doc(getFirestore(), 'users', context.rootGetters["AuthModule/getUser"].email);
-  const docSnap = await getDoc(docRef);
-
-  return await docSnap.data().myList;
 }
