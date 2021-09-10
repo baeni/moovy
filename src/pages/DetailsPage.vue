@@ -37,6 +37,7 @@
           />
 
           <q-btn
+            v-show="!existsInUsersMyList"
             class="text-bold text-accent"
             icon="bookmark_border"
             dark
@@ -44,7 +45,7 @@
             round
             dense
             no-caps
-            @click="addToUsersList()"
+            @click="addToUsersMyList()"
           >
             <q-tooltip
               class="bg-light text-caption text-bold"
@@ -56,6 +57,7 @@
           </q-btn>
 
           <q-btn
+            v-show="existsInUsersMyList"
             class="text-bold text-accent"
             icon="bookmark"
             dark
@@ -63,7 +65,7 @@
             round
             dense
             no-caps
-            @click="removeFromUsersList()"
+            @click="removeFromUsersMyList()"
           >
             <q-tooltip
               class="bg-light text-caption text-bold"
@@ -163,13 +165,13 @@ export default {
   },
   data() {
     return {
-      dataReady: false,
       movie: {},
-      trailers: []
+      trailers: [],
+      dataReady: false
     }
   },
   methods: {
-    addToUsersList() {
+    addToUsersMyList() {
       if (this.$store.getters["AuthModule/getUser"] === null) {
         this.$router.push('/auth');
         return;
@@ -180,7 +182,8 @@ export default {
           this.notify(this.$t('detailsPage.addedToUsersList', { title: this.movie.title }));
         }).catch(err => Promise.reject(err));
     },
-    removeFromUsersList() {
+
+    removeFromUsersMyList() {
       if (this.$store.getters["AuthModule/getUser"] === null) {
         this.$router.push('/auth');
         return;
@@ -190,6 +193,13 @@ export default {
         .then(() => {
           this.notify(this.$t('detailsPage.removedFromUsersList', { title: this.movie.title }));
         }).catch(err => Promise.reject(err));
+    }
+  },
+  computed: {
+    existsInUsersMyList() {
+      return this.$store.getters['AuthModule/getUser'] !== null
+        && this.$store.getters["DbModule/getUsersMyList"] !== undefined
+        && this.$store.getters["DbModule/getUsersMyList"].some(el => el.title === this.movie.title);
     }
   },
   setup() {
