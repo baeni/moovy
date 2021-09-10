@@ -26,8 +26,8 @@ export default {
   detailsPage: {
     homepage: 'Official Site',
     trailers: 'Trailers, Teasers & more',
-    addedToUsersList: '{title} has been added to your list.',
-    removedFromUsersList: '{title} has been removed from your list.'
+    addedToUsersList: '"{title}" has been added to your list.',
+    removedFromUsersList: '"{title}" has been removed from your list.'
   },
   authPage: {
     name: 'Sign In',
