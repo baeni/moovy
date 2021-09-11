@@ -47,15 +47,13 @@ export default {
     SearchForm,
     MovieList
   },
-  data() {
-    return {
-      popularMovies: [],
-      upcomingMovies: []
+  computed: {
+    popularMovies() {
+      return this.$store.getters['SearchModule/getPopularMovies']
+    },
+    upcomingMovies() {
+      return this.$store.getters['SearchModule/getUpcomingMovies']
     }
-  },
-  created() {
-    this.popularMovies = this.$store.getters['SearchModule/getPopularMovies'];
-    this.upcomingMovies = this.$store.getters['SearchModule/getUpcomingMovies'];
   }
 }
 </script>
