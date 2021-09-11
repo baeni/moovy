@@ -19,13 +19,10 @@ export default {
   components: {
     MovieList
   },
-  data() {
-    return {
-      usersMyList: []
+  computed: {
+    usersMyList() {
+      return this.$store.getters['DbModule/getUsersMyList']
     }
-  },
-  created() {
-    this.usersMyList = this.$store.getters['DbModule/getUsersMyList'];
   }
 }
 </script>
