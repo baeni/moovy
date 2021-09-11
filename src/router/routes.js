@@ -9,7 +9,8 @@ const routes = [
       { path: 'details/:id', component: () => import('pages/DetailsPage.vue'), props: route => ({ id: route.params.id }) },
 
       { path: 'auth', component: () => import('pages/AuthPage'), meta: { onlyNonAuth: true }  },
-      { path: 'my-list', component: () => import('pages/MyListPage.vue'), meta: { onlyAuth: true } },
+      //{ path: 'settings', component: () => import('pages/SettingsPage.vue')/*, meta: { onlyAuth: true }*/ },
+      { path: 'list', component: () => import('pages/ListPage.vue'), meta: { onlyAuth: true } },
 
       { path: ':catchAll(.*)*', component: () => import('pages/Error404Page.vue') }
     ]
