@@ -1,8 +1,10 @@
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
 import db from 'src/boot/firebase';
 
 export async function subscribeUsersMyList(context) {
-  await onSnapshot(doc(db, 'users', context.rootGetters["AuthModule/getUser"].email), doc => {
+  const docRef = doc(db, 'users', context.rootGetters["AuthModule/getUser"].email);
+
+  await onSnapshot(docRef, doc => {
     context.commit('setUsersMyList', doc.data().myList);
   });
 }
@@ -26,6 +28,6 @@ export async function removeFromUsersMyList(context, movie) {
   const docRef = doc(db, 'users', context.rootGetters["AuthModule/getUser"].email);
 
   await updateDoc(docRef, {
-    myList: arrayRemove(movie)
+    myList: context.getters.getUsersMyList.filter(el => el.id !== movie.id)
   });
 }
