@@ -9,21 +9,24 @@
 
         <q-separator class="q-my-xs" />
 
-        <!--<q-item v-close-popup clickable @click="$router.push('/your-list')">-->
-        <q-item title="Currently being developed" disabled>
+        <!--
+        <q-item v-close-popup clickable @click="$router.push('/account')">
           <q-item-section>{{ $t('general.profileMenuAccount') }}</q-item-section>
         </q-item>
+        -->
 
-        <q-item v-close-popup clickable @click="$router.push('/my-list')">
+        <q-item v-close-popup clickable @click="$router.push('/list')">
           <q-item-section>{{ $t('general.profileMenuList') }}</q-item-section>
         </q-item>
 
         <q-separator class="q-my-xs" />
 
-        <!--<q-item v-close-popup clickable>-->
-        <q-item title="Temporarily not available" disabled>
+        <!--
+        <q-item v-close-popup clickable>
           <q-item-section>{{ $t('general.profileMenuLanguage') }}</q-item-section>
         </q-item>
+        -->
+        
         <q-item v-close-popup clickable @click="$store.dispatch('AuthModule/signOutUser')">
           <q-item-section>{{ $t('general.profileMenuSignOut') }}</q-item-section>
         </q-item>
