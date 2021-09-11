@@ -4,7 +4,7 @@
       <div class="container">
         <movie-list
           :title="$t('myListPage.name')"
-          :movies="$store.getters['DbModule/getUsersMyList']"
+          :movies="usersMyList"
         />
       </div>
     </section>
@@ -15,9 +15,17 @@
 import MovieList from 'components/movie/MovieList';
 
 export default {
-  name: 'MyListPage',
+  name: 'ListPage',
   components: {
     MovieList
+  },
+  data() {
+    return {
+      usersMyList: []
+    }
+  },
+  created() {
+    this.usersMyList = this.$store.getters['DbModule/getUsersMyList'];
   }
 }
 </script>
