@@ -9,27 +9,27 @@
       </div>
     </section>
 
-    <q-separator dark inset />
+    <q-separator class="section-separator" dark inset />
 
     <!-- popular movies -->
     <section>
       <div class="container">
         <movie-list
           :title="$t('indexPage.popularMovies')"
-          :movies="$store.getters['SearchModule/getPopularMovies']"
+          :movies="popularMovies"
           scroller
         />
       </div>
     </section>
 
-    <q-separator dark inset />
+    <q-separator class="section-separator" dark inset />
 
     <!-- upcoming movies -->
     <section>
       <div class="container">
         <movie-list
           :title="$t('indexPage.upcomingMovies')"
-          :movies="$store.getters['SearchModule/getUpcomingMovies']"
+          :movies="upcomingMovies"
           scroller
         />
       </div>
@@ -46,6 +46,16 @@ export default {
   components: {
     SearchForm,
     MovieList
+  },
+  data() {
+    return {
+      popularMovies: [],
+      upcomingMovies: []
+    }
+  },
+  created() {
+    this.popularMovies = this.$store.getters['SearchModule/getPopularMovies'];
+    this.upcomingMovies = this.$store.getters['SearchModule/getUpcomingMovies'];
   }
 }
 </script>
