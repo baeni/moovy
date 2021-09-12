@@ -2,7 +2,6 @@
   <div class="col-3" v-bind:class="{ 'col-6': $q.platform.is.mobile }">
     <q-card
       class="full-height"
-      bordered
       dark
     >
       <div class="overflow-hidden">
