@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <!-- landing -->
-    <section>
+    <section style="padding-top: 15vh;">
       <div class="container">
         <div class="text-h1 text-center text-gradient">{{ $t('indexPage.heading') }}</div>
         <div class="text-h3 text-center text-light">{{ $t('indexPage.subHeading') }}</div>
@@ -17,7 +17,7 @@
         <movie-list
           :title="$t('indexPage.popularMovies')"
           :movies="popularMovies"
-          scroller
+          expandable
         />
       </div>
     </section>
@@ -30,7 +30,7 @@
         <movie-list
           :title="$t('indexPage.upcomingMovies')"
           :movies="upcomingMovies"
-          scroller
+          expandable
         />
       </div>
     </section>
