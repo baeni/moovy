@@ -1,6 +1,20 @@
 <template>
-  <div class="text-h3 text-uppercase text-light q-pb-md">{{ title }}</div>
-  <div class="row q-col-gutter-md" v-bind:class="{ 'no-wrap overflow-auto q-pb-md': scroller }">
+  <div class="text-h3 text-uppercase text-light q-pb-md">
+    {{ title }}
+    <span>
+        <q-btn
+          v-if="expandable && movies.length > 4"
+          :icon="expanded ? 'expand_more' : 'navigate_next'"
+          size="16px"
+          flat
+          dense
+          round
+          @click="expanded = !expanded"
+        />
+      </span>
+  </div>
+
+  <div class="row q-col-gutter-md" v-bind:class="{ 'no-wrap overflow-auto q-pb-md': scroller || (expandable && !expanded) }">
     <movie-list-item
       v-for="movie in movies"
       :key="movie.id"
@@ -10,7 +24,7 @@
 </template>
 
 <script>
-import MovieListItem from "components/movie/MovieListItem";
+import MovieListItem from 'components/movie/MovieListItem';
 
 export default {
   name: 'MovieList',
@@ -29,6 +43,15 @@ export default {
     scroller: {
       type: Boolean,
       default: false
+    },
+    expandable: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      expanded: false
     }
   }
 }
