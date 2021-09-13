@@ -15,8 +15,12 @@
         </q-item>
         -->
 
-        <q-item v-close-popup clickable @click="$router.push('/list')">
-          <q-item-section>{{ $t('general.profileMenuList') }}</q-item-section>
+        <q-item v-close-popup clickable @click="$router.push('/watchlist')">
+          <q-item-section>{{ $t('general.profileMenuWatchlist') }}</q-item-section>
+        </q-item>
+
+        <q-item v-close-popup clickable @click="$router.push('/favorites')">
+          <q-item-section>{{ $t('general.profileMenuFavorites') }}</q-item-section>
         </q-item>
 
         <q-separator class="q-my-xs" />
@@ -26,7 +30,7 @@
           <q-item-section>{{ $t('general.profileMenuLanguage') }}</q-item-section>
         </q-item>
         -->
-        
+
         <q-item v-close-popup clickable @click="$store.dispatch('AuthModule/signOutUser')">
           <q-item-section>{{ $t('general.profileMenuSignOut') }}</q-item-section>
         </q-item>
