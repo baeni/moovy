@@ -1,5 +1,6 @@
 export default function () {
   return {
-    usersMyList: undefined
+    usersWatchlist: undefined,
+    usersFavorites: undefined
   }
 }
