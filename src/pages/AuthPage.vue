@@ -1,21 +1,23 @@
 <template>
-  <q-page>
+  <q-page class="absolute-top">
     <!-- landing -->
-    <section>
+    <section class="flex flex-center window-height">
       <div class="container">
-        <auth-form />
+        <div class="text-h1 text-center text-gradient">{{ $t('authPage.heading') }}</div>
+        <div class="text-h3 text-center text-light">{{ $t('authPage.subHeading') }}</div>
+        <auth-list class="q-pt-lg" />
       </div>
     </section>
   </q-page>
 </template>
 
 <script>
-import AuthForm from "components/auth/AuthForm";
+import AuthList from 'components/auth/AuthList';
 
 export default {
   name: 'AuthPage',
   components: {
-    AuthForm
+    AuthList
   }
 }
 </script>
