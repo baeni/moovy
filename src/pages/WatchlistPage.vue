@@ -3,8 +3,8 @@
     <section>
       <div class="container">
         <movie-list
-          :title="$t('myListPage.name')"
-          :movies="usersMyList"
+          :title="$t('watchlistPage.name')"
+          :movies="usersWatchlist"
         />
       </div>
     </section>
@@ -15,13 +15,13 @@
 import MovieList from 'components/movie/MovieList';
 
 export default {
-  name: 'ListPage',
+  name: 'WatchlistPage',
   components: {
     MovieList
   },
   computed: {
-    usersMyList() {
-      return this.$store.getters['DbModule/getUsersMyList']
+    usersWatchlist() {
+      return this.$store.getters['DbModule/getUsersWatchlist']
     }
   }
 }
