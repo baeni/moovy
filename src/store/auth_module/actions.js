@@ -1,33 +1,19 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, GithubAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
-export function signUpUser(context, credentials) {
-  const email = credentials.email;
-  const password = credentials.password;
-
-  createUserWithEmailAndPassword(getAuth(), email, password)
-    .then(() => {
-      context.commit('setUser');
-      this.dispatch('DbModule/subscribeUsersWatchlist');
-      this.dispatch('DbModule/subscribeUsersFavorites');
-      this.$router.back();
-    }).catch(err => Promise.reject(err));
-}
-
-export function signInUser(context, credentials) {
-  const email = credentials.email;
-  const password = credentials.password;
-
-  signInWithEmailAndPassword(getAuth(), email, password)
-    .then(() => {
-      context.commit('setUser');
-      this.dispatch('DbModule/subscribeUsersWatchlist');
-      this.dispatch('DbModule/subscribeUsersFavorites');
-      this.$router.back();
-    }).catch(err => Promise.reject(err));
-}
-
-export function googleSignInUser(context) {
+export function signInGoogle(context) {
   const provider = new GoogleAuthProvider();
+
+  signInWithPopup(getAuth(), provider)
+    .then(() => {
+      context.commit('setUser');
+      this.dispatch('DbModule/subscribeUsersWatchlist');
+      this.dispatch('DbModule/subscribeUsersFavorites');
+      this.$router.back();
+    }).catch(err => Promise.reject(err));
+}
+
+export function signInGithub(context) {
+  const provider = new GithubAuthProvider();
 
   signInWithPopup(getAuth(), provider)
     .then(() => {
