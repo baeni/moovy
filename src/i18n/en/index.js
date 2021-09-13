@@ -37,13 +37,8 @@ export default {
   },
   authPage: {
     name: 'Sign In',
-    heading: 'Sign in with',
-
-    formEmail: 'Enter your email',
-    formPassword: 'Enter your password',
-    formPasswordConfirm: 'Confirm your password',
-    formSignIn: 'Sign In',
-    formSignUp: 'Create New Account'
+    heading: 'Connect to moovy',
+    subHeading: 'Sign in with your favorite service to enjoy the full potencial of moovy',
   },
   watchlistPage: {
     name: 'My Watchlist'
