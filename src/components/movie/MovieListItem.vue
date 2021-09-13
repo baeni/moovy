@@ -21,23 +21,20 @@
       <q-card-section>
         <div class="text-h4 ellipsis-2-lines">{{ movie.title }}</div>
         <div class="text-subtitle2 text-light">{{ movie.release_date }}</div>
-        <q-chip
-          v-for="genreId in movie.genre_ids"
-          :key="genreId"
-          :label="genreId"
-          size="12px"
-          color="darkest"
-          text-color="lightest"
-          clickable
-        />
+        <movie-genre-chips :movie="movie" />
       </q-card-section>
     </q-card>
   </div>
 </template>
 
 <script>
+import MovieGenreChips from 'components/movie/MovieGenreChips';
+
 export default {
   name: 'MovieListItem',
+  components: {
+    MovieGenreChips
+  },
   props: {
     movie: {
       type: Object,
@@ -55,13 +52,24 @@ export default {
 }
 
 .q-card {
+  // transition out
+  transition: transform .175s ease-in-out;
+
+  &:hover {
+    // transition and transform in
+    transition: transform .5s ease-in-out;
+    transform: scale(1.025);
+  }
+
   &:hover .q-img {
-    transition: transform .75s ease-in-out;
-    transform: scale(1.05);
+    // transition and transform in
+    transition: transform 1s ease-in-out;
+    transform: scale(1.025);
   }
 }
 
 .q-img {
+  // transition out
   transition: transform .175s ease-in-out;
 }
 </style>
