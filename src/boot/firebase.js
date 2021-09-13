@@ -5,11 +5,11 @@ const FIREBASE_API_KEY = process.env.VUE_APP_FIREBASE_API_KEY;
 
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,
-  authDomain: "moovy--auth.firebaseapp.com",
-  projectId: "moovy--auth",
-  storageBucket: "moovy--auth.appspot.com",
-  messagingSenderId: "156772489604",
-  appId: "1:156772489604:web:8966db289473210c6be5d1"
+  authDomain: "moovy-c992e.firebaseapp.com",
+  projectId: "moovy-c992e",
+  storageBucket: "moovy-c992e.appspot.com",
+  messagingSenderId: "398535714146",
+  appId: "1:398535714146:web:b7425f8eda0675f124f83b"
 };
 
 initializeApp(firebaseConfig);
