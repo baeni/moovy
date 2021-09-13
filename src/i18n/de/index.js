@@ -4,31 +4,38 @@ export default {
     formSearchHint: 'moovy basiert auf der TMDb und bezieht alle Informationen von dessen API',
 
     profileMenu: 'Angemeldet als {username}',
-    profileMenuAccount: 'Mein Account',
-    profileMenuList: 'Meine Liste',
-    profileMenuLanguage: 'Sprache',
+    profileMenuWatchlist: 'Meine Watchlist',
+    profileMenuFavorites: 'Meine Favoriten',
     profileMenuSignOut: 'Abmelden'
   },
   indexPage: {
-    name: 'Home',
     heading: 'Finde den Film mit moovy',
     subHeading: 'Gesprochen wie /mu:vɪ/ oder movie',
+
     popularMovies: 'Beliebte Filme',
-    upcomingMovies: 'Kommende Filme',
-    more: 'Mehr anzeigen'
+    upcomingMovies: 'Kommende Filme'
   },
   searchPage: {
     results: 'Ergebnisse für "{query}"'
   },
   detailsPage: {
+    noInformation: 'Keine Info',
     homepage: 'Offizielle Seite',
-    trailers: 'Trailer, Teaser & mehr',
-    addedToUsersList: '"{title}" wurde zu deiner Liste hinzugefügt.',
-    removedFromUsersList: '"{title}" wurde von deiner Liste entfernt.'
+
+    addToUsersWatchlist: 'Zur Watchlist hinzufügen',
+    removeFromUsersWatchlist: 'Von Watchlist entfernen',
+    addedToUsersWatchlist: '"{title}" wurde zu deiner Watchlist hinzugefügt.',
+    removedFromUsersWatchlist: '"{title}" wurde von deiner Watchlist entfernt.',
+
+    addToUsersFavorites: 'Zu Favoriten hinzufügen',
+    removeFromUsersFavorites: 'Von Favoriten entfernen',
+    addedToUsersFavorites: '"{title}" wurde zu deinen Favoriten hinzugefügt.',
+    removedFromUsersFavorites: '"{title}" wurde von deinen Favoriten entfernt.'
   },
   authPage: {
     name: 'Anmelden',
     heading: 'Anmelden mit',
+
     formEmail: 'Email',
     formUsername: 'Nutzername',
     formPassword: 'Passwort',
@@ -36,8 +43,11 @@ export default {
     formSignIn: 'Anmelden',
     formSignUp: 'Neuen Account erstellen'
   },
-  myListPage: {
-    name: 'Meine Liste'
+  watchlistPage: {
+    name: 'Meine Watchlist'
+  },
+  favoritesPage: {
+    name: 'Meine Favoriten'
   },
   error404Page: {
     heading: '404 — Falsche Richtung',
