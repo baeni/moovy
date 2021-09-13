@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <!-- landing -->
-    <section style="padding-top: 15vh;">
+    <section class="flex flex-center" style="height: 35vh;">
       <div class="container">
         <div class="text-h1 text-center text-gradient">{{ $t('indexPage.heading') }}</div>
         <div class="text-h3 text-center text-light">{{ $t('indexPage.subHeading') }}</div>
@@ -9,7 +9,7 @@
       </div>
     </section>
 
-    <q-separator class="section-separator" dark inset />
+    <q-separator dark inset />
 
     <!-- popular movies -->
     <section>
@@ -22,7 +22,7 @@
       </div>
     </section>
 
-    <q-separator class="section-separator" dark inset />
+    <q-separator dark inset />
 
     <!-- upcoming movies -->
     <section>
