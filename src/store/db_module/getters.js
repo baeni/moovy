@@ -1,3 +1,7 @@
-export function getUsersMyList(state) {
-  return state.usersMyList;
+export function getUsersWatchlist(state) {
+  return state.usersWatchlist;
+}
+
+export function getUsersFavorites(state) {
+  return state.usersFavorites;
 }
