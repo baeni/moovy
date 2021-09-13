@@ -28,6 +28,8 @@ export function signOutUser(context) {
   signOut(getAuth())
     .then(() => {
       context.commit('setUser');
+      this.commit('DbModule/setUsersWatchlist', []);
+      this.commit('DbModule/setUsersFavorites', []);
       this.$router.push('/');
     }).catch(err => Promise.reject(err));
 }
