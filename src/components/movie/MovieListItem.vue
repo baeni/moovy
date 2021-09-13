@@ -52,19 +52,10 @@ export default {
 }
 
 .q-card {
-  // transition out
-  transition: transform .175s ease-in-out;
-
-  &:hover {
-    // transition and transform in
-    transition: transform .5s ease-in-out;
-    transform: scale(1.025);
-  }
-
+  // transition and transform in
   &:hover .q-img {
-    // transition and transform in
     transition: transform 1s ease-in-out;
-    transform: scale(1.025);
+    transform: scale(1.05);
   }
 }
 
