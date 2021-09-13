@@ -10,7 +10,8 @@ const routes = [
 
       { path: 'auth', component: () => import('pages/AuthPage'), meta: { onlyNonAuth: true }  },
       //{ path: 'settings', component: () => import('pages/SettingsPage.vue')/*, meta: { onlyAuth: true }*/ },
-      { path: 'list', component: () => import('pages/ListPage.vue'), meta: { onlyAuth: true } },
+      { path: 'watchlist', component: () => import('pages/WatchlistPage.vue'), meta: { onlyAuth: true } },
+      { path: 'favorites', component: () => import('pages/FavoritesPage.vue'), meta: { onlyAuth: true } },
 
       { path: ':catchAll(.*)*', component: () => import('pages/Error404Page.vue') }
     ]
