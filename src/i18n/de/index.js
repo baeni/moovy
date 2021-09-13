@@ -34,14 +34,8 @@ export default {
   },
   authPage: {
     name: 'Anmelden',
-    heading: 'Anmelden mit',
-
-    formEmail: 'Email',
-    formUsername: 'Nutzername',
-    formPassword: 'Passwort',
-    formConfirmPassword: 'Passwort bestätigen',
-    formSignIn: 'Anmelden',
-    formSignUp: 'Neuen Account erstellen'
+    heading: 'Mit moovy verbinden',
+    subHeading: 'Melde dich mit deiner lieblings Plattform an, um das volle Potenzial von moovy zu genießen',
   },
   watchlistPage: {
     name: 'Meine Watchlist'
