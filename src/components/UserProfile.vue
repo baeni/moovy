@@ -2,7 +2,7 @@
   <q-btn round flat>
     <q-avatar v-if="usersPhoto !== null"><q-img :src="usersPhoto" referrerpolicy="no-referrer" /></q-avatar>
     <q-avatar v-else class="text-dark text-bold bg-lightest" round>{{ usersInitials }}</q-avatar>
-    <q-menu class="bg-light q-py-sm" anchor="bottom right" self="top right" :offset="[0, 10]" dark>
+    <q-menu class="bg-light q-py-sm" anchor="bottom right" self="top right" :offset="[0, 10]" transition-show="scale" transition-hide="fade" dark>
       <q-list style="min-width: 150px;" dense>
         <q-item v-if="usersName !== null" class="text-bold">{{ $t('general.profileMenu', { username: usersName }) }}</q-item>
         <q-item v-else class="text-bold">{{ usersEmail }}</q-item>
