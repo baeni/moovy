@@ -21,6 +21,7 @@
 
         <q-item v-close-popup clickable @click="$store.dispatch('AuthModule/signOutUser')">
           <q-item-section>{{ $t('general.profileMenuSignOut') }}</q-item-section>
+          <q-item-section avatar><q-icon name="logout" size="16px" /></q-item-section>
         </q-item>
       </q-list>
     </q-menu>
