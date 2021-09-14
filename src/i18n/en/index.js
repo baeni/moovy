@@ -37,8 +37,8 @@ export default {
   },
   authPage: {
     name: 'Sign In',
-    heading: 'Connect to moovy',
-    subHeading: 'Sign in with Google to enjoy the full potential of moovy',
+    heading: 'Connect with moovy',
+    subHeading: 'Sign in with Google to enjoy moovy\'s full potential',
   },
   watchlistPage: {
     name: 'My Watchlist'
