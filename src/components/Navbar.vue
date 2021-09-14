@@ -10,7 +10,7 @@
       <q-separator class="q-mx-md" vertical inset dark />
 
       <user-profile v-if="user" :user="user" />
-      <q-btn v-else class="text-bold" :label="$t('authPage.name')" flat rounded @click="$router.push('/auth')" />
+      <q-btn v-else class="text-bold" :label="$t('authPage.name')" flat stretch no-caps @click="$router.push('/auth')" />
     </q-toolbar>
   </q-header>
 </template>
@@ -29,14 +29,13 @@ export default {
     user() {
       return this.$store.getters['AuthModule/getUser']
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 header {
-  min-height: 75px;
   background: transparentize($light, .9);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(25px);
 }
 </style>
