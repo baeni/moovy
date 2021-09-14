@@ -1,9 +1,8 @@
 <template>
   <div class="text-h3 text-uppercase text-light q-pb-md">
     {{ title }}
-    <span>
+    <span v-if="expandableScroller">
         <q-btn
-          v-if="expandable && movies.length > 4"
           :icon="expanded ? 'expand_more' : 'navigate_next'"
           size="16px"
           flat
@@ -14,7 +13,7 @@
       </span>
   </div>
 
-  <div class="row q-col-gutter-md" v-bind:class="{ 'no-wrap overflow-auto q-pb-md': scroller || (expandable && !expanded) }">
+  <div class="row q-col-gutter-md" :class="{ 'no-wrap overflow-auto q-pb-md': scroller || (expandableScroller && !expanded) }">
     <movie-list-item
       v-for="movie in movies"
       :key="movie.id"
@@ -44,7 +43,7 @@ export default {
       type: Boolean,
       default: false
     },
-    expandable: {
+    expandableScroller: {
       type: Boolean,
       default: false
     }
