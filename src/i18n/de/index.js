@@ -35,7 +35,7 @@ export default {
   authPage: {
     name: 'Anmelden',
     heading: 'Mit moovy verbinden',
-    subHeading: 'Melde dich mit Google an, um das volle Potenzial von moovy zu genießen',
+    subHeading: 'Melde dich mit Google an, um moovy\'s volles Potenzial zu genießen',
   },
   watchlistPage: {
     name: 'Meine Watchlist'
