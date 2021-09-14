@@ -7,7 +7,7 @@
       icon="fab fa-google"
       flat
       no-caps
-      rounded
+      fab-mini
       @click="this.$store.dispatch('AuthModule/signInGoogle')"
     />
   </div>
