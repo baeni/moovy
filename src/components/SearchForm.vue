@@ -1,18 +1,18 @@
 <template>
-  <q-form @submit="this.$router.push('/search/'+query);">
+  <q-form @submit="search()">
     <q-input
-      class="full-width"
       v-model="query"
       :model-value="query"
       :placeholder="$t('general.formSearch')"
       :bottom-slots="!dense"
+      :dense="dense"
+      :rounded="!dense"
       clear-icon="close"
       clearable
       dark
-      dense
       standout
     >
-      <template v-slot:append>
+      <template v-slot:prepend>
         <q-icon name="search" />
       </template>
       <template v-slot:hint v-if="!dense">
@@ -34,6 +34,13 @@ export default {
   data() {
     return {
       query: ''
+    }
+  },
+  methods: {
+    search() {
+      if (!this.query) return;
+
+      this.$router.push('/search/'+this.query);
     }
   }
 }
