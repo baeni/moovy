@@ -2,10 +2,10 @@
   <q-page>
     <!-- landing -->
     <section class="flex flex-center" style="height: 35vh;">
-      <div class="container">
-        <div class="text-h1 text-center text-gradient">{{ $t('indexPage.heading') }}</div>
-        <div class="text-h3 text-center text-light">{{ $t('indexPage.subHeading') }}</div>
-        <search-form class="q-pt-lg" />
+      <div class="container text-center">
+        <div class="text-h1 text-gradient">{{ $t('indexPage.heading') }}</div>
+        <div class="text-h3 text-light">{{ $t('indexPage.subHeading') }}</div>
+        <search-form class="q-mt-xl" />
       </div>
     </section>
 
@@ -17,7 +17,7 @@
         <movie-list
           :title="$t('indexPage.popularMovies')"
           :movies="popularMovies"
-          expandable
+          expandable-scroller
         />
       </div>
     </section>
@@ -30,7 +30,7 @@
         <movie-list
           :title="$t('indexPage.upcomingMovies')"
           :movies="upcomingMovies"
-          expandable
+          expandable-scroller
         />
       </div>
     </section>
