@@ -1,22 +1,24 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHr lpr lfr">
     <navbar />
 
     <q-page-container>
       <router-view :key="$route.fullPath" />
     </q-page-container>
 
-    <!-- TODO: Footer -->
+    <footr />
   </q-layout>
 </template>
 
 <script>
-import Navbar from "components/Navbar";
+import Navbar from 'components/navbar/Navbar';
+import Footr from 'components/Footer';
 
 export default {
   name: 'MainLayout',
   components: {
-    Navbar
+    Navbar,
+    Footr
   }
 }
 </script>
