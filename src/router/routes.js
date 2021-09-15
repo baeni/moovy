@@ -9,9 +9,12 @@ const routes = [
       { path: 'details/:id', component: () => import('pages/DetailsPage.vue'), props: route => ({ id: route.params.id }) },
 
       { path: 'auth', component: () => import('pages/AuthPage'), meta: { onlyNonAuth: true }  },
-      //{ path: 'settings', component: () => import('pages/SettingsPage.vue')/*, meta: { onlyAuth: true }*/ },
       { path: 'watchlist', component: () => import('pages/WatchlistPage.vue'), meta: { onlyAuth: true } },
       { path: 'favorites', component: () => import('pages/FavoritesPage.vue'), meta: { onlyAuth: true } },
+
+      { path: 'terms-of-service', component: () => import('pages/TermsOfServicePage.vue') },
+      { path: 'privacy-policy', component: () => import('pages/PrivacyPolicyPage.vue') },
+      { path: 'imprint', component: () => import('pages/TermsOfServicePage.vue') },
 
       { path: ':catchAll(.*)*', component: () => import('pages/Error404Page.vue') }
     ]
