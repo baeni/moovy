@@ -17,7 +17,7 @@
 
 <script>
 import SearchForm from 'components/SearchForm';
-import UserProfile from 'components/UserProfile';
+import UserProfile from 'components/navbar/UserProfile';
 
 export default {
   name: 'Navbar',
