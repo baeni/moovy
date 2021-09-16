@@ -6,7 +6,7 @@
       <router-link
         class="text-bold text-lightest"
         style="text-decoration: none;"
-        to="terms-of-service"
+        to="/terms-of-service"
       >
         Terms of service
       </router-link>
@@ -16,7 +16,7 @@
       <router-link
         class="text-bold text-lightest"
         style="text-decoration: none;"
-        to="privacy-policy"
+        to="/privacy-policy"
       >
         Privacy policy
       </router-link>
@@ -26,7 +26,7 @@
       <router-link
         class="text-bold text-lightest"
         style="text-decoration: none;"
-        to="imprint"
+        to="/imprint"
       >
         Imprint
       </router-link>
