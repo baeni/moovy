@@ -20,7 +20,7 @@
 
       <q-card-section>
         <div class="text-h4 ellipsis-2-lines">{{ movie.title }}</div>
-        <div class="text-subtitle2 text-light">{{ movie.release_date }}</div>
+        <div class="text-subtitle2 text-light">{{ new Date(movie.release_date).toLocaleDateString() }}</div>
         <movie-genre-chips :movie="movie" />
       </q-card-section>
     </q-card>
