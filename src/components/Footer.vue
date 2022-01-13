@@ -33,7 +33,7 @@
 
       <q-space />
 
-      <div class="text-bold text-light">&copy; 2021 moovy</div>
+      <div class="text-bold text-light">&copy; {{ new Date().getFullYear() }} baeni</div>
 
       <q-space />
     </q-toolbar>
